@@ -1,0 +1,135 @@
+Jan 6, 2014 Notes
+==================
+
+    Model view controller approach
+
+    http://upce-pythoncert.github.io
+
+    Why Virtualenv?
+
+        you need to install packages not part of the Standard Library
+    
+        You may need to install *different versions* of the same package
+
+        Dependency problems
+    
+        Virtualenv solves all that
+
+
+        Always use Virtualenv if using additional packages
+
+============================================================
+
+
+    
+    OOP was formalized in "Smalltalk" in the 1970's 
+
+    Smalltalk was the first language which utilized the model view controller design matter
+
+        Seeks to provide a way of thinking that helps to make software design easier 
+
+    Clarify the "separation of concerns"
+
+    Model - the data that comprise the system and the logic used to manipulate it
+
+    View - Any way of looking at the data or any representation of it (chart, diagram, UI, etc.)
+
+        Also incluses representations of the actions available in the system
+    
+    Controller - Coordinates the model and the view in a system. Accepts user input and channels it into the model
+        
+        Accepts information and transmits that information to the View
+
+
+    Pattern has been a useful way of thinking about the applications we build
+
+    Web browser = convenient container for views
+
+    Controller accepts input via HTTP requests, channels it into a data model (stored in a database, generally), returns information about the state of the data model to the user via HTTP responses
+
+    This approach is so common, we have formalized it into web frameworks
+
+    Web frameworks abstract away the specifics of the HTTP request/response cycle, leaving simple MVC components for the developer to use
+
+    Web frameworks exists in all modern languages, Python has TONS
+
+    We're going to talk about Pyramid and Django
+
+
+====================================================
+
+    Althought the MVC pattern is a useful abstraction, there are a few differences in how things are named in Python web frameworks:
+    
+    Real Life  |  Python    
+    -------------------
+
+    Models == Models
+
+    Controller == View
+
+    View == Template (or HTTP response)
+
+    
+====================================================
+
+    Pyramid
+
+
+        Prepare for project
+
+        MVC - define the problem domain by creating one or more models
+
+    These capture relevenat details about the information we want to preserve and how to interact with it
+
+    In python-based MVC apps. these models are implemented as classes
+
+    The individual bits of data we want to know about are attributes of our classes
+
+    the actions we want to take are methods
+    
+
+    Persistence -- what happens do your data when the script stops running?
+
+        Many different ways of saving these data
+
+        Largest sources of data persistence on the web: NoSQL and SQL
+
+    How do you pick? Depends on what you want to do with your data
+
+    In general, the telling factor is going to be how you intend to use your data
+
+    In systems where the dominant feature is viewing/interacting with individual objects, a NoSQL storage solution might be the best way to go
+
+    In systems with objects are related to one-another, SQL-based (relational) databases are a better choice
+
+====================================================
+
+
+    SO we have a sytem where our data are captured in Python objects, and a storage system where our data must be rendered as database tables
+
+    ORM - object-relational manager ----> provides a layer of abstraction between you and SQL
+
+    You instantiate Python objects and set attributes on them
+
+    the ORM handles converting data from these objects into SQL statements
+
+    ANy class we create that inherits from Base becomes a *model*
+
+    The name of the table is determined by __tablename__ special attribute
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
